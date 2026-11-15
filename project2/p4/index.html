@@ -1,390 +1,601 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABC Online Book Store</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Online Book Store</title>
 
-    <link rel="stylesheet" href="style.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    background: #f2f7ff;
+    color: #183153;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: #063970;
+    padding: 20px 0;
+    color: white;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #ffad33;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.shop-btn, .primary-btn, .offer-btn {
+    background: #ff9f1c;
+    color: #102a43;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.hero {
+    background: linear-gradient(120deg, #063970, #168aad);
+    color: white;
+    padding: 90px 0;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.tag {
+    color: #ffcf70;
+    font-weight: bold;
+}
+
+.hero h1 {
+    font-size: 45px;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #ffbd59;
+}
+
+.hero p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.secondary-btn {
+    color: white;
+    border: 2px solid white;
+    padding: 10px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 8px;
+}
+
+.book-cover {
+    background: #ffad33;
+    color: #063970;
+    padding: 55px 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 25px #05264a;
+}
+
+.book-icon {
+    font-size: 65px;
+}
+
+.book-cover h3 {
+    font-size: 35px;
+    margin: 15px;
+}
+
+.features {
+    padding: 45px 0;
+}
+
+.feature-grid, .category-grid, .books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 22px;
+}
+
+.feature-card, .category-card, .book-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px #cbd8e8;
+}
+
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.section {
+    padding: 65px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-heading span {
+    color: #f28c00;
+    font-weight: bold;
+}
+
+.section-heading h2 {
+    font-size: 32px;
+    margin: 12px;
+    color: #063970;
+}
+
+.category-card div {
+    font-size: 40px;
+    margin-bottom: 12px;
+}
+
+.category-card p, .feature-card p {
+    margin-top: 10px;
+    color: #60758b;
+}
+
+.books-section {
+    background: #e3efff;
+}
+
+.book-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.book-image {
+    padding: 35px 15px;
+    font-size: 45px;
+    color: white;
+}
+
+.book-image small {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.programming {
+    background: #168aad;
+}
+
+.web {
+    background: #315c9b;
+}
+
+.database {
+    background: #f28c00;
+}
+
+.book-info {
+    padding: 20px;
+}
+
+.book-category {
+    color: #f28c00;
+    font-weight: bold;
+}
+
+.book-info h3 {
+    margin: 12px 0;
+}
+
+.author {
+    color: #60758b;
+    margin-bottom: 15px;
+}
+
+.book-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+.book-bottom strong {
+    color: #063970;
+    font-size: 20px;
+}
+
+button {
+    background: #063970;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff9f1c;
+    color: #102a43;
+}
+
+.offer {
+    background: #063970;
+    color: white;
+    padding: 50px 0;
+}
+
+.offer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.offer h2 {
+    color: #ffbd59;
+    font-size: 35px;
+    margin: 12px 0;
+}
+
+.offer p {
+    line-height: 1.7;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.about-icon {
+    font-size: 100px;
+    text-align: center;
+}
+
+.about-label {
+    color: #f28c00;
+    font-weight: bold;
+}
+
+.about h2 {
+    margin: 12px 0;
+    color: #063970;
+}
+
+.about p {
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+
+.contact-info {
+    margin-top: 20px;
+}
+
+footer {
+    background: #05264a;
+    color: white;
+    padding: 45px 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    padding-bottom: 30px;
+}
+
+footer h3 {
+    color: #ffbd59;
+    margin-bottom: 15px;
+}
+
+footer p {
+    line-height: 1.8;
+    margin: 8px 0;
+}
+
+footer a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.copyright {
+    text-align: center;
+    background: #031b35;
+    padding: 18px;
+}
+
+@media(max-width: 700px) {
+    .nav-container {
+        flex-direction: column;
+    }
+
+    nav {
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container nav-container">
+<header>
+    <div class="container nav-container">
+        <div class="logo">📚 <span>ABC</span> Book Store</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#books">Books</a>
+            <a href="#offers">Offers</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <a href="#books" class="shop-btn">Shop Now</a>
+    </div>
+</header>
 
-            <div class="logo">
-                📚 <span>ABC</span> Book Store
-            </div>
-
-            <nav>
-                <a href="#home">Home</a>
-                <a href="#categories">Categories</a>
-                <a href="#books">Books</a>
-                <a href="#offers">Offers</a>
-                <a href="#contact">Contact</a>
-            </nav>
-
-            <a href="#books" class="shop-btn">Shop Now</a>
-
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <span class="tag">📖 Discover Your Next Book</span>
+            <h1>Your Gateway to <span>Knowledge & Stories</span></h1>
+            <p>Explore thousands of books from programming, technology, business, fiction and competitive exams.</p>
+            <a href="#books" class="primary-btn">Explore Books</a>
+            <a href="#categories" class="secondary-btn">View Categories</a>
         </div>
-    </header>
-
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-
-        <div class="container hero-content">
-
-            <div class="hero-text">
-
-                <span class="tag">📖 Discover Your Next Book</span>
-
-                <h1>
-                    Your Gateway to
-                    <span>Knowledge & Stories</span>
-                </h1>
-
-                <p>
-                    Explore thousands of books from programming, technology,
-                    business, fiction and competitive exams.
-                </p>
-
-                <div class="hero-buttons">
-                    <a href="#books" class="primary-btn">Explore Books</a>
-                    <a href="#categories" class="secondary-btn">View Categories</a>
-                </div>
-
+        <div class="hero-book">
+            <div class="book-cover">
+                <div class="book-icon">📚</div>
+                <h3>READ</h3>
+                <p>LEARN • GROW • ACHIEVE</p>
             </div>
-
-            <div class="hero-book">
-                <div class="book-cover">
-                    <div class="book-icon">📚</div>
-                    <h3>READ</h3>
-                    <p>LEARN • GROW • ACHIEVE</p>
-                </div>
-            </div>
-
         </div>
+    </div>
+</section>
 
-    </section>
-
-
-    <!-- Features -->
-    <section class="features">
-
-        <div class="container feature-grid">
-
-            <div class="feature-card">
-                <div class="feature-icon">🚚</div>
-                <h3>Fast Delivery</h3>
-                <p>Get your favorite books delivered quickly.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">💳</div>
-                <h3>Secure Payment</h3>
-                <p>Safe and secure payment options.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">📚</div>
-                <h3>Huge Collection</h3>
-                <p>Books from multiple categories and genres.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-icon">🎁</div>
-                <h3>Special Offers</h3>
-                <p>Enjoy exciting discounts on selected books.</p>
-            </div>
-
+<section class="features">
+    <div class="container feature-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🚚</div>
+            <h3>Fast Delivery</h3>
+            <p>Get your favorite books delivered quickly.</p>
         </div>
-
-    </section>
-
-
-    <!-- Categories -->
-    <section class="section" id="categories">
-
-        <div class="container">
-
-            <div class="section-heading">
-                <span>EXPLORE</span>
-                <h2>Book Categories</h2>
-                <p>Find the perfect book according to your interests.</p>
-            </div>
-
-            <div class="category-grid">
-
-                <div class="category-card">
-                    <div>💻</div>
-                    <h3>Programming</h3>
-                    <p>Learn coding and software development.</p>
-                </div>
-
-                <div class="category-card">
-                    <div>🖥️</div>
-                    <h3>Computer Science</h3>
-                    <p>Explore technology and computer concepts.</p>
-                </div>
-
-                <div class="category-card">
-                    <div>💼</div>
-                    <h3>Business</h3>
-                    <p>Books for business and management.</p>
-                </div>
-
-                <div class="category-card">
-                    <div>📖</div>
-                    <h3>Fiction</h3>
-                    <p>Discover amazing stories and novels.</p>
-                </div>
-
-                <div class="category-card">
-                    <div>🎓</div>
-                    <h3>Competitive Exams</h3>
-                    <p>Prepare for your upcoming examinations.</p>
-                </div>
-
-            </div>
-
+        <div class="feature-card">
+            <div class="feature-icon">💳</div>
+            <h3>Secure Payment</h3>
+            <p>Safe and secure payment options.</p>
         </div>
+        <div class="feature-card">
+            <div class="feature-icon">📚</div>
+            <h3>Huge Collection</h3>
+            <p>Books from multiple categories and genres.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎁</div>
+            <h3>Special Offers</h3>
+            <p>Enjoy exciting discounts on selected books.</p>
+        </div>
+    </div>
+</section>
 
-    </section>
-
-
-    <!-- Popular Books -->
-    <section class="section books-section" id="books">
-
-        <div class="container">
-
-            <div class="section-heading">
-                <span>BEST SELLERS</span>
-                <h2>Popular Books</h2>
-                <p>Some of our most popular books.</p>
+<section class="section" id="categories">
+    <div class="container">
+        <div class="section-heading">
+            <span>EXPLORE</span>
+            <h2>Book Categories</h2>
+            <p>Find the perfect book according to your interests.</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card">
+                <div>💻</div>
+                <h3>Programming</h3>
+                <p>Learn coding and software development.</p>
             </div>
+            <div class="category-card">
+                <div>🖥️</div>
+                <h3>Computer Science</h3>
+                <p>Explore technology and computer concepts.</p>
+            </div>
+            <div class="category-card">
+                <div>💼</div>
+                <h3>Business</h3>
+                <p>Books for business and management.</p>
+            </div>
+            <div class="category-card">
+                <div>📖</div>
+                <h3>Fiction</h3>
+                <p>Discover amazing stories and novels.</p>
+            </div>
+            <div class="category-card">
+                <div>🎓</div>
+                <h3>Competitive Exams</h3>
+                <p>Prepare for your upcoming examinations.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="books-grid">
-
-                <!-- Book 1 -->
-                <div class="book-card">
-
-                    <div class="book-image programming">
-                        <span>🐍</span>
-                        <small>PROGRAMMING</small>
-                    </div>
-
-                    <div class="book-info">
-
-                        <span class="book-category">Programming</span>
-
-                        <h3>Python Programming</h3>
-
-                        <p class="author">
-                            By John Smith
-                        </p>
-
-                        <div class="book-bottom">
-                            <strong>₹450</strong>
-                            <button>Add to Cart</button>
-                        </div>
-
-                    </div>
-
+<section class="section books-section" id="books">
+    <div class="container">
+        <div class="section-heading">
+            <span>BEST SELLERS</span>
+            <h2>Popular Books</h2>
+            <p>Some of our most popular books.</p>
+        </div>
+        <div class="books-grid">
+            <div class="book-card">
+                <div class="book-image programming">
+                    <span>🐍</span>
+                    <small>PROGRAMMING</small>
                 </div>
-
-
-                <!-- Book 2 -->
-                <div class="book-card">
-
-                    <div class="book-image web">
-                        <span>🌐</span>
-                        <small>WEB TECHNOLOGY</small>
+                <div class="book-info">
+                    <span class="book-category">Programming</span>
+                    <h3>Python Programming</h3>
+                    <p class="author">By John Smith</p>
+                    <div class="book-bottom">
+                        <strong>₹450</strong>
+                        <button>Add to Cart</button>
                     </div>
-
-                    <div class="book-info">
-
-                        <span class="book-category">Technology</span>
-
-                        <h3>Web Technology</h3>
-
-                        <p class="author">
-                            By David Brown
-                        </p>
-
-                        <div class="book-bottom">
-                            <strong>₹500</strong>
-                            <button>Add to Cart</button>
-                        </div>
-
-                    </div>
-
                 </div>
+            </div>
 
-
-                <!-- Book 3 -->
-                <div class="book-card">
-
-                    <div class="book-image database">
-                        <span>🗄️</span>
-                        <small>DATABASE</small>
-                    </div>
-
-                    <div class="book-info">
-
-                        <span class="book-category">Computer Science</span>
-
-                        <h3>Database Management</h3>
-
-                        <p class="author">
-                            By Robert Lee
-                        </p>
-
-                        <div class="book-bottom">
-                            <strong>₹550</strong>
-                            <button>Add to Cart</button>
-                        </div>
-
-                    </div>
-
+            <div class="book-card">
+                <div class="book-image web">
+                    <span>🌐</span>
+                    <small>WEB TECHNOLOGY</small>
                 </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Offer -->
-    <section class="offer" id="offers">
-
-        <div class="container offer-content">
-
-            <div>
-                <span>LIMITED TIME OFFER</span>
-
-                <h2>Get 20% OFF</h2>
-
-                <p>
-                    Grab your favorite books at amazing prices.
-                    Offer available on selected books.
-                </p>
-            </div>
-
-            <a href="#books" class="offer-btn">
-                Shop Offers →
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- About -->
-    <section class="section about" id="contact">
-
-        <div class="container about-grid">
-
-            <div class="about-icon">
-                📚
-            </div>
-
-            <div>
-
-                <span class="about-label">ABOUT US</span>
-
-                <h2>Books That Inspire You</h2>
-
-                <p>
-                    ABC Online Book Store is your online destination for
-                    books covering technology, programming, business,
-                    fiction and education.
-                </p>
-
-                <p>
-                    Our goal is to make quality books easily accessible
-                    to students, professionals and book lovers.
-                </p>
-
-                <div class="contact-info">
-
-                    <div>
-                        <strong>📍 Address</strong>
-                        <p>Jaipur, Rajasthan, India</p>
+                <div class="book-info">
+                    <span class="book-category">Technology</span>
+                    <h3>Web Technology</h3>
+                    <p class="author">By David Brown</p>
+                    <div class="book-bottom">
+                        <strong>₹500</strong>
+                        <button>Add to Cart</button>
                     </div>
-
-                    <div>
-                        <strong>📞 Phone</strong>
-                        <p>+91 98765 43210</p>
-                    </div>
-
-                    <div>
-                        <strong>✉️ Email</strong>
-                        <p>info@abcbookstore.com</p>
-                    </div>
-
                 </div>
-
             </div>
 
+            <div class="book-card">
+                <div class="book-image database">
+                    <span>🗄️</span>
+                    <small>DATABASE</small>
+                </div>
+                <div class="book-info">
+                    <span class="book-category">Computer Science</span>
+                    <h3>Database Management</h3>
+                    <p class="author">By Robert Lee</p>
+                    <div class="book-bottom">
+                        <strong>₹550</strong>
+                        <button>Add to Cart</button>
+                    </div>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
 
-    </section>
-
-
-    <!-- Footer -->
-    <footer>
-
-        <div class="container footer-grid">
-
-            <div>
-                <h2>📚 ABC Book Store</h2>
-
-                <p>
-                    Your online destination for books,
-                    knowledge and inspiration.
-                </p>
-            </div>
-
-            <div>
-                <h3>Quick Links</h3>
-
-                <a href="#home">Home</a>
-                <a href="#categories">Categories</a>
-                <a href="#books">Books</a>
-                <a href="#offers">Offers</a>
-            </div>
-
-            <div>
-                <h3>Categories</h3>
-
-                <a href="#">Programming</a>
-                <a href="#">Computer Science</a>
-                <a href="#">Business</a>
-                <a href="#">Fiction</a>
-            </div>
-
-            <div>
-                <h3>Opening Hours</h3>
-
-                <p>Monday - Saturday</p>
-                <strong>9:00 AM - 8:00 PM</strong>
-
-                <p>Sunday</p>
-                <strong>10:00 AM - 6:00 PM</strong>
-            </div>
-
+<section class="offer" id="offers">
+    <div class="container offer-content">
+        <div>
+            <span>LIMITED TIME OFFER</span>
+            <h2>Get 20% OFF</h2>
+            <p>Grab your favorite books at amazing prices. Offer available on selected books.</p>
         </div>
+        <a href="#books" class="offer-btn">Shop Offers →</a>
+    </div>
+</section>
 
-        <div class="copyright">
-            <p>© 2026 ABC Online Book Store. All Rights Reserved.</p>
+<section class="section about" id="contact">
+    <div class="container about-grid">
+        <div class="about-icon">📚</div>
+        <div>
+            <span class="about-label">ABOUT US</span>
+            <h2>Books That Inspire You</h2>
+            <p>ABC Online Book Store is your online destination for books covering technology, programming, business, fiction and education.</p>
+            <p>Our goal is to make quality books easily accessible to students, professionals and book lovers.</p>
+            <div class="contact-info">
+                <div>
+                    <strong>📍 Address</strong>
+                    <p>Jaipur, Rajasthan, India</p>
+                </div>
+                <div>
+                    <strong>📞 Phone</strong>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div>
+                    <strong>✉️ Email</strong>
+                    <p>info@abcbookstore.com</p>
+                </div>
+            </div>
         </div>
+    </div>
+</section>
 
-    </footer>
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <h2>📚 ABC Book Store</h2>
+            <p>Your online destination for books, knowledge and inspiration.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <a href="#home">Home</a>
+            <a href="#categories">Categories</a>
+            <a href="#books">Books</a>
+            <a href="#offers">Offers</a>
+        </div>
+        <div>
+            <h3>Categories</h3>
+            <a href="#">Programming</a>
+            <a href="#">Computer Science</a>
+            <a href="#">Business</a>
+            <a href="#">Fiction</a>
+        </div>
+        <div>
+            <h3>Opening Hours</h3>
+            <p>Monday - Saturday</p>
+            <strong>9:00 AM - 8:00 PM</strong>
+            <p>Sunday</p>
+            <strong>10:00 AM - 6:00 PM</strong>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>© 2026 ABC Online Book Store. All Rights Reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>
