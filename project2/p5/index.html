@@ -1,15 +1,238 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Department of Computer Science</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+        background: #f3f5fa;
+        color: #26344b;
+    }
+
+    header {
+        background: #142b4a;
+        color: white;
+        text-align: center;
+        padding: 35px 20px;
+        border-bottom: 5px solid #e6b84c;
+    }
+
+    header h1 {
+        font-size: 32px;
+        margin-bottom: 8px;
+    }
+
+    header h3 {
+        color: #e6b84c;
+        font-weight: 400;
+        margin-bottom: 25px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #e6b84c;
+    }
+
+    .hero {
+        background: linear-gradient(120deg, #1b3d66, #315e91);
+        color: white;
+        text-align: center;
+        padding: 85px 20px;
+    }
+
+    .hero h2 {
+        font-size: 36px;
+        margin-bottom: 18px;
+        color: #f3c75e;
+    }
+
+    .hero p {
+        max-width: 750px;
+        margin: auto;
+        line-height: 1.9;
+        font-size: 15px;
+        color: #e2eaf5;
+    }
+
+    section {
+        padding: 55px 8%;
+    }
+
+    section h2 {
+        text-align: center;
+        color: #17385e;
+        font-size: 27px;
+        margin-bottom: 30px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 22px;
+    }
+
+    .card {
+        background: white;
+        padding: 30px 20px;
+        text-align: center;
+        border-radius: 12px;
+        border-top: 5px solid #e6b84c;
+        box-shadow: 0 5px 20px #142b4a12;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        background: #edf3fa;
+    }
+
+    .card h3 {
+        color: #1d4b7b;
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .card p {
+        color: #69778a;
+        font-size: 13px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background: white;
+        box-shadow: 0 5px 20px #142b4a10;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    th {
+        background: #1b3d66;
+        color: white;
+        padding: 16px;
+        text-align: left;
+    }
+
+    td {
+        padding: 15px;
+        border-bottom: 1px solid #e1e7ef;
+        color: #45566d;
+        font-size: 14px;
+    }
+
+    tr:hover td {
+        background: #eef3fa;
+    }
+
+    .notice {
+        background: white;
+        padding: 25px 25px 25px 45px;
+        border-left: 5px solid #e6b84c;
+        border-radius: 10px;
+        box-shadow: 0 5px 20px #142b4a10;
+    }
+
+    .notice li {
+        padding: 12px 5px;
+        color: #45566d;
+        line-height: 1.6;
+    }
+
+    .contact {
+        background: #e6edf6;
+        text-align: center;
+    }
+
+    .contact p {
+        color: #45566d;
+        line-height: 2;
+        font-size: 15px;
+    }
+
+    footer {
+        background: #142b4a;
+        color: white;
+        text-align: center;
+        padding: 22px;
+        border-top: 4px solid #e6b84c;
+        font-size: 14px;
+    }
+
+    @media(max-width: 800px) {
+        .cards {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media(max-width: 550px) {
+        header h1 {
+            font-size: 24px;
+        }
+
+        .hero h2 {
+            font-size: 27px;
+        }
+
+        nav {
+            gap: 15px;
+        }
+
+        .cards {
+            grid-template-columns: 1fr;
+        }
+
+        section {
+            padding: 40px 5%;
+        }
+
+        table {
+            font-size: 12px;
+        }
+
+        th, td {
+            padding: 9px 6px;
+        }
+    }
+
+    </style>
+
 </head>
+
 <body>
 
 <header>
+
     <h1>Department of Computer Science</h1>
+
     <h3>XYZ University</h3>
 
     <nav>
@@ -19,17 +242,22 @@
         <a href="#">Courses</a>
         <a href="#">Contact</a>
     </nav>
+
 </header>
 
 <section class="hero">
+
     <h2>Welcome to the Department</h2>
+
     <p>
         The Department of Computer Science provides quality education
         and develops technical and problem-solving skills among students.
     </p>
+
 </section>
 
 <section>
+
     <h2>Programs Offered</h2>
 
     <div class="cards">
@@ -55,12 +283,15 @@
         </div>
 
     </div>
+
 </section>
 
 <section>
+
     <h2>Faculty Members</h2>
 
     <table>
+
         <tr>
             <th>Name</th>
             <th>Designation</th>
@@ -84,20 +315,29 @@
             <td>Assistant Professor</td>
             <td>Computer Networks</td>
         </tr>
+
     </table>
+
 </section>
 
 <section>
+
     <h2>Important Notice</h2>
 
     <ul class="notice">
+
         <li>Mid-term examinations will begin from 15 September.</li>
+
         <li>Students must submit assignments before the deadline.</li>
+
         <li>Registration for the seminar is now open.</li>
+
     </ul>
+
 </section>
 
 <section class="contact">
+
     <h2>Contact Us</h2>
 
     <p>
@@ -106,10 +346,13 @@
         Jaipur, Rajasthan<br>
         Email: cs@xyzuniversity.edu
     </p>
+
 </section>
 
 <footer>
-    <p>© 2026 XYZ University</p>
+
+    <p>© 2026 XYZ University. All Rights Reserved.</p>
+
 </footer>
 
 </body>
