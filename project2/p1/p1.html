@@ -1,4 +1,4 @@
-
+ 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,33 +8,490 @@
 
     <title>ABC College of Technology</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- New Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #ffffff;
+            color: #25243a;
+        }
+
+        .top-bar {
+            background: #211c45;
+            color: white;
+            padding: 12px 7%;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 7%;
+            background: white;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            background: #7454d8;
+            color: white;
+            padding: 15px;
+            font-size: 22px;
+            font-weight: 800;
+            border-radius: 12px;
+        }
+
+        .logo h1 {
+            font-size: 23px;
+            color: #211c45;
+        }
+
+        .logo p {
+            font-size: 12px;
+            color: #7454d8;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #25243a;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #7454d8;
+        }
+
+        .nav-button {
+            background: #7454d8;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 7px;
+        }
+
+        .nav-button:hover {
+            background: #211c45;
+            color: white;
+        }
+
+        .hero {
+            min-height: 480px;
+            background: linear-gradient(120deg, #211c45, #5943a9, #8065dc);
+            display: flex;
+            align-items: center;
+            padding: 70px 9%;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-small {
+            color: #d7caff;
+            font-size: 13px;
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: #e3d8ff;
+        }
+
+        .hero p {
+            font-size: 15px;
+            line-height: 1.9;
+            color: #e7e2fa;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 14px 25px;
+            border-radius: 7px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #5943a9;
+        }
+
+        .btn-outline {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            padding: 40px 7%;
+            background: #f5f2ff;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .stat h3 {
+            font-size: 32px;
+            color: #7454d8;
+        }
+
+        .stat p {
+            color: #66617b;
+            font-size: 14px;
+        }
+
+        .section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title span {
+            color: #7454d8;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+            margin: 12px 0;
+            color: #211c45;
+        }
+
+        .section-title p {
+            color: #77738a;
+            font-size: 14px;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-box {
+            background: linear-gradient(135deg, #7454d8, #211c45);
+            height: 300px;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 65px;
+            font-weight: 800;
+        }
+
+        .about-content h2 {
+            font-size: 27px;
+            color: #211c45;
+            margin-bottom: 18px;
+        }
+
+        .about-content p {
+            color: #77738a;
+            line-height: 1.9;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .about-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .about-list li {
+            margin-bottom: 12px;
+            color: #393451;
+            font-size: 14px;
+        }
+
+        .about-list li::before {
+            content: "✔ ";
+            color: #7454d8;
+            font-weight: bold;
+        }
+
+        .courses-section {
+            background: #f8f7fc;
+        }
+
+        .courses {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .course-card {
+            background: white;
+            padding: 28px 20px;
+            border-radius: 13px;
+            border: 1px solid #eeeaf9;
+            transition: 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px #dcd4f5;
+        }
+
+        .course-icon {
+            background: #eee9ff;
+            color: #7454d8;
+            display: inline-block;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .course-card h3 {
+            font-size: 17px;
+            color: #211c45;
+            margin-bottom: 12px;
+        }
+
+        .course-card p {
+            color: #77738a;
+            font-size: 13px;
+            line-height: 1.8;
+        }
+
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .news-box {
+            padding: 25px;
+            border: 1px solid #eeeaf9;
+            border-radius: 12px;
+            background: white;
+        }
+
+        .news-item {
+            border-bottom: 1px solid #eeeaf9;
+            padding: 15px 0;
+        }
+
+        .news-date {
+            color: #7454d8;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .news-item h3 {
+            color: #211c45;
+            margin: 8px 0;
+            font-size: 18px;
+        }
+
+        .news-item p {
+            color: #77738a;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .news-box > h3 {
+            color: #211c45;
+            margin-bottom: 20px;
+        }
+
+        .news-box > p {
+            margin-bottom: 18px;
+            color: #7454d8;
+            font-size: 14px;
+        }
+
+        .admission {
+            text-align: center;
+            background: linear-gradient(120deg, #211c45, #7454d8);
+            padding: 65px 20px;
+            color: white;
+        }
+
+        .admission h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .admission p {
+            margin-bottom: 25px;
+            color: #e7e2fa;
+        }
+
+        footer {
+            background: #17142f;
+            color: white;
+            padding: 55px 8% 20px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 35px;
+            margin-bottom: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 20px;
+            color: #c6b5ff;
+            font-size: 17px;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: #c3bfd5;
+            line-height: 1.9;
+            margin-bottom: 10px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 12px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #c3bfd5;
+            font-size: 13px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #393451;
+            text-align: center;
+            padding-top: 20px;
+            color: #aaa5c0;
+            font-size: 12px;
+        }
+
+        @media(max-width: 900px) {
+
+            header {
+                gap: 20px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .courses {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            .top-bar {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about,
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+
+            .courses {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 25px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
     <div class="top-bar">
         <span>📞 +91 98765 43210</span>
         <span>✉ info@abccollege.edu.in</span>
     </div>
 
-
-    <!-- HEADER -->
     <header>
 
         <div class="logo">
-
-            <div class="logo-icon">
-                ABC
-            </div>
+            <div class="logo-icon">ABC</div>
 
             <div>
                 <h1>ABC College</h1>
                 <p>College of Technology</p>
             </div>
-
         </div>
 
         <nav>
@@ -43,16 +500,11 @@
             <a href="#courses">Courses</a>
             <a href="#news">News</a>
             <a href="#contact">Contact</a>
-
-            <a href="#admission" class="nav-button">
-                Apply Now
-            </a>
+            <a href="#admission" class="nav-button">Apply Now</a>
         </nav>
 
     </header>
 
-
-    <!-- HERO SECTION -->
     <section class="hero" id="home">
 
         <div class="hero-content">
@@ -73,7 +525,6 @@
             </p>
 
             <div class="hero-buttons">
-
                 <a href="#courses" class="btn btn-primary">
                     Explore Courses
                 </a>
@@ -81,15 +532,12 @@
                 <a href="#about" class="btn btn-outline">
                     Discover More
                 </a>
-
             </div>
 
         </div>
 
     </section>
 
-
-    <!-- STATS -->
     <section class="stats">
 
         <div class="stat">
@@ -114,30 +562,19 @@
 
     </section>
 
-
-    <!-- ABOUT -->
     <section class="section" id="about">
 
         <div class="section-title">
-
             <span>About Us</span>
-
             <h2>Why Choose ABC College?</h2>
-
-            <p>
-                We focus on academic excellence, innovation and
-                practical learning.
-            </p>
-
+            <p>We focus on academic excellence, innovation and practical learning.</p>
         </div>
-
 
         <div class="about">
 
             <div class="about-box">
                 ABC
             </div>
-
 
             <div class="about-content">
 
@@ -156,12 +593,10 @@
                 </p>
 
                 <ul class="about-list">
-
                     <li>Experienced Faculty</li>
                     <li>Modern Computer Laboratories</li>
                     <li>Industry-Oriented Curriculum</li>
                     <li>Placement & Internship Support</li>
-
                 </ul>
 
             </div>
@@ -170,191 +605,87 @@
 
     </section>
 
-
-    <!-- COURSES -->
     <section class="section courses-section" id="courses">
 
         <div class="section-title">
-
             <span>Our Programs</span>
-
             <h2>Popular Courses</h2>
-
-            <p>
-                Choose from our range of undergraduate and
-                postgraduate programs.
-            </p>
-
+            <p>Choose from our range of undergraduate and postgraduate programs.</p>
         </div>
-
 
         <div class="courses">
 
             <div class="course-card">
-
-                <div class="course-icon">
-                    BCA
-                </div>
-
-                <h3>
-                    Bachelor of Computer Applications
-                </h3>
-
-                <p>
-                    Learn programming, databases, web development
-                    and modern computer technologies.
-                </p>
-
+                <div class="course-icon">BCA</div>
+                <h3>Bachelor of Computer Applications</h3>
+                <p>Learn programming, databases, web development and modern computer technologies.</p>
             </div>
 
-
             <div class="course-card">
-
-                <div class="course-icon">
-                    MCA
-                </div>
-
-                <h3>
-                    Master of Computer Applications
-                </h3>
-
-                <p>
-                    Advanced education in software development,
-                    AI, cloud computing and IT.
-                </p>
-
+                <div class="course-icon">MCA</div>
+                <h3>Master of Computer Applications</h3>
+                <p>Advanced education in software development, AI, cloud computing and IT.</p>
             </div>
 
-
             <div class="course-card">
-
-                <div class="course-icon">
-                    CSE
-                </div>
-
-                <h3>
-                    B.Tech Computer Science
-                </h3>
-
-                <p>
-                    Build strong technical skills in programming,
-                    algorithms and computer engineering.
-                </p>
-
+                <div class="course-icon">CSE</div>
+                <h3>B.Tech Computer Science</h3>
+                <p>Build strong technical skills in programming, algorithms and computer engineering.</p>
             </div>
 
-
             <div class="course-card">
-
-                <div class="course-icon">
-                    M.Tech
-                </div>
-
-                <h3>
-                    M.Tech Computer Science
-                </h3>
-
-                <p>
-                    Advanced technical studies and research
-                    in computer science and technology.
-                </p>
-
+                <div class="course-icon">M.Tech</div>
+                <h3>M.Tech Computer Science</h3>
+                <p>Advanced technical studies and research in computer science and technology.</p>
             </div>
 
         </div>
 
     </section>
 
-
-    <!-- NEWS -->
     <section class="section" id="news">
 
         <div class="section-title">
-
             <span>Stay Updated</span>
-
             <h2>Latest News & Announcements</h2>
-
         </div>
-
 
         <div class="news-container">
 
             <div class="news-box">
 
                 <div class="news-item">
-
-                    <div class="news-date">
-                        15 SEPTEMBER 2026
-                    </div>
-
-                    <h3>
-                        Admission Open for 2026-27
-                    </h3>
-
-                    <p>
-                        Applications are now open for undergraduate
-                        and postgraduate programs.
-                    </p>
-
+                    <div class="news-date">15 SEPTEMBER 2026</div>
+                    <h3>Admission Open for 2026-27</h3>
+                    <p>Applications are now open for undergraduate and postgraduate programs.</p>
                 </div>
 
-
                 <div class="news-item">
-
-                    <div class="news-date">
-                        10 SEPTEMBER 2026
-                    </div>
-
-                    <h3>
-                        Annual Technical Fest
-                    </h3>
-
-                    <p>
-                        Students can register for technical events,
-                        competitions and workshops.
-                    </p>
-
+                    <div class="news-date">10 SEPTEMBER 2026</div>
+                    <h3>Annual Technical Fest</h3>
+                    <p>Students can register for technical events, competitions and workshops.</p>
                 </div>
 
-
                 <div class="news-item">
-
-                    <div class="news-date">
-                        05 SEPTEMBER 2026
-                    </div>
-
-                    <h3>
-                        Internship Program Registration
-                    </h3>
-
-                    <p>
-                        Registration is now open for the upcoming
-                        internship program.
-                    </p>
-
+                    <div class="news-date">05 SEPTEMBER 2026</div>
+                    <h3>Internship Program Registration</h3>
+                    <p>Registration is now open for the upcoming internship program.</p>
                 </div>
 
             </div>
 
-
             <div class="news-box">
-
                 <h3>Important Links</h3>
-
                 <p>📌 Admission 2026-27</p>
                 <p>📌 Examination Schedule</p>
                 <p>📌 Academic Calendar</p>
                 <p>📌 Student Login</p>
-
             </div>
 
         </div>
 
     </section>
 
-
-    <!-- ADMISSION -->
     <section class="admission" id="admission">
 
         <h2>Start Your Journey With Us</h2>
@@ -369,65 +700,47 @@
 
     </section>
 
-
-    <!-- FOOTER -->
     <footer id="contact">
 
         <div class="footer-container">
 
             <div>
-
                 <h3>ABC College of Technology</h3>
-
                 <p>
                     Providing quality education and creating
                     opportunities for students through knowledge,
                     innovation and excellence.
                 </p>
-
             </div>
 
-
             <div>
-
                 <h3>Quick Links</h3>
-
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About Us</a></li>
                     <li><a href="#courses">Courses</a></li>
                     <li><a href="#news">News</a></li>
                 </ul>
-
             </div>
 
-
             <div>
-
                 <h3>Programs</h3>
-
                 <ul>
                     <li><a href="#">BCA</a></li>
                     <li><a href="#">MCA</a></li>
                     <li><a href="#">B.Tech CSE</a></li>
                     <li><a href="#">M.Tech CSE</a></li>
                 </ul>
-
             </div>
 
-
             <div>
-
                 <h3>Contact</h3>
-
                 <p>📍 Jaipur, Rajasthan</p>
                 <p>📞 +91 98765 43210</p>
                 <p>✉ info@abccollege.edu.in</p>
-
             </div>
 
         </div>
-
 
         <div class="copyright">
             © 2026 ABC College of Technology. All Rights Reserved.
@@ -437,4 +750,3 @@
 
 </body>
 </html>
-
